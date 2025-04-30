@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="foaf: http://xmlns.com/foaf/0.1/">
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" href="node_modules/shower-material/styles/styles.css">
+
+    <link rel="foaf:maker" href="https://jitsedesmet.be/" />
+    <link rel="me" href="https://mastodon.social/@smetje007"/>
+
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# org: http://www.w3.org/ns/org# schema: http://schema.org/ cite: http://purl.org/spar/cito/" typeof="schema:PresentationDigitalDocument">
+<header class="caption">
+    <div class="title">
+        <h1 property="schema:name">Client-driven Query Execution across Solid Pods</h1>
+    </div>
+    <div class="captiondata">
+        <p class="author" rel="schema:author"><a href="https://www.rubensworks.net/#me">Ruben Taelman</a></p>
+        <p class="venue">
+            <a href="https://www.sosy2025.eu/">Solid Symposium 2025</a>, <span rel="schema:datePublished">24 April 2025</span></a>
+        </p>
+    </div>
+</header>
+
+<section id="title" class="slide title" inlist="" rel="schema:hasPart" resource="#title">
+    <h2 property="schema:name">Client-driven<br \>Query Execution<br \>across Solid Pods</h2>
+    <ul class="author inline">
+        <li class="current"><a href="https://www.rubensworks.net/">Ruben Taelman</a></li>
+    </ul>
+    <p class="affiliation"><a href="http://idlab.technology/">Ghent University – imec – IDLab, Belgium</a></p>
+</section>
+
+<section id="start" class="slide" inlist="" rel="schema:hasPart" resource="#start">
+    <h2 property="schema:name" class="big" style="margin-top: 20px; font-size: 1.9em">Interconnected Solid Pods form a <em>Decentralized Knowledge Graph</em> (DKG)</h2>
+    <ul>
+        <li><h3>Lack of centralized index(es)</h3></li>
+        <li><h3>Massive number of globally distributed sources</h3></li>
+        <li><h3>Permissioned data</h3></li>
+    </ul>
+    <div style="text-align: center">
+        <img src="img/solid-logo.svg" alt="Solid Logo" style="height: 200px; margin: 0px" \>
+    </div>
+</section>
+
+<section id="complexity-devs" class="slide" inlist="" rel="schema:hasPart" resource="#complexity-devs">
+    <h2 property="schema:name" class="big" style="margin-top: 20px; font-size: 2em">Difficulties for user-facing app developers</h2>
+    <ul>
+        <li>
+            <h3>Discovering data</h3>
+            <span class="indent" style="font-style:italic">How can I find pods? How can I find data within a pod?</span>
+        </li>
+        <li>
+            <h3>Combining data</h3>
+            <span class="indent" style="font-style:italic">How to combine data across different pods?</span>
+        </li>
+        <li>
+            <h3>Preserving privacy</h3>
+            <span class="indent" style="font-style:italic">How to not leak sensitive data?</span>
+        </li>
+    </ul>
+</section>
+
+<section id="connection-point" class="slide" inlist="" rel="schema:hasPart" resource="#connection-point">
+    <h2 property="schema:name" class="big" style="margin-top: 20px; font-size: 1.9em">Abstract access to DKGs with query engines</h2>
+    <h3>Hide the complexities of reading and writing for app developers</h3>
+    <center>
+        <img src="img/computer.png" alt="Application" width="150px" style="margin-right: 20px" />
+        <span style="font-size: 6em; vertical-align: baseline; position: relative; top: -40px">&harr;</span>
+        <img src="img/gear.png" alt="Gear" width="170px" />
+        <span style="font-size: 6em; vertical-align: baseline; position: relative; top: -40px">&harr;</span>
+        <img src="img/globe.png" alt="Globe" width="150px" style="margin-left: 20px" />
+    </center>
+    <p style="font-style: italic; float: left">SPARQL, GraphQL, &mldr;</p>
+    <p style="text-align: right; font-style: italic"><a href="https://www.flaticon.com/free-icons/application" title="application icons">Image credit</a></p>
+</section>
+
+<section id="link-traversal" class="slide" inlist="" rel="schema:hasPart" resource="#link-traversal">
+    <h2 property="schema:name" style="font-size: 1.9em">Solid pods adhere to Linked Data Principles</h2>
+    <ul>
+        <li>
+            <h3>Client-side engines can discover data by following links</h3>
+            <span class="indent"><strong>Link Traversal Query Processing:</strong><br \>
+			  <span class="indent">&nbsp;&nbsp;&nbsp;&nbsp;Lookup more information about <em>things</em> by following links</span><br \><br \>
+			  <span class="indent">➕ Fully decentralized</span><br \>
+              <span class="indent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No dependency on intermediaries</span><br \>
+              <span class="indent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Robust against partial unavailability</span><br \>
+              <span class="indent">➖ Slow for complex queries</span>
+        </li>
+    </ul>
+    <center>
+        <img src="img/follow-links.svg" alt="Follow links" style="height: 180px" \>
+    </center>
+</section>
+
+<section id="link-traversal-results" class="slide" inlist="" rel="schema:hasPart" resource="#link-traversal-results">
+    <h2 property="schema:name" style="font-size: 1.9em">Query results arrive incrementally<br \>within human attention limits</h2>
+    <center>
+        <img src="img/querytimes_d2-3.svg" alt="Query arrival times for Query D2-3" style="height: 260px" \>
+    </center>
+    <ul>
+        <li>SPARQL query with 6 triple patterns</li>
+        <li>Across 1.531 simulated Solid pods (158.233 files, 3.556.159 triples)</li>
+        <li style="font-size: 0.75em"><em><a href="https://comunica.github.io/Article-ISWC2023-SolidQuery/">Taelman, Ruben, and Ruben Verborgh. "Link traversal query processing over decentralized environments with structural assumptions." International Semantic Web Conference 2023.</a></em></li>
+    </ul>
+</section>
+
+<section id="slow-queries" class="slide" inlist="" rel="schema:hasPart" resource="#slow-queries">
+    <h2 property="schema:name" style="font-size: 1.9em">Query execution time mainly influenced by number of followed links</h2>
+    <center>
+        <img src="img/queue-discover-4.svg" alt="Link queue Discover 4" style="height: 260px" \>
+        <img src="img/queue-complex-2.svg" alt="Link queue Complex 2" style="height: 260px" \>
+    </center>
+    <ul>
+        <li>Queries requiring few links are fast (Discover 4)</li>
+        <li>Queries requiring many links are slower (Complex 2)</li>
+        <li style="font-size: 0.75em"><em><a href="https://rubeneschauzier.github.io/QuWeDa2023-Link-Queue-Analysis-Camera-Ready/QuWeDa_2023_Link_Queue_Analysis_Final.pdf">Eschauzier, Ruben, Ruben Taelman, and Ruben Verborgh. "How Does the Link Queue Evolve during Traversal-Based Query Processing?." QuWeDa/MEPDaW@ISWC. 2023.</a></em></li>
+    </ul>
+</section>
+
+<section id="challenges" class="slide" inlist="" rel="schema:hasPart" resource="#challenges">
+    <h2 property="schema:name">If pods expose more information, complex querying can become faster</h2>
+    <ul>
+        <li>
+            <h3>When following links, engines can <em>discover</em> optimizations</h3>
+            <span class="indent">If pods expose them</span>
+        </li>
+        <!--<li>
+              <h3>A pod can guide engines more efficiently towards relevant data</h3>
+            <span class="indent">Type indexes, shape trees, shape indexes, &mldr;</span>
+        </li>
+        <li>
+              <h3>Cross-pod indexes can prune out irrelevant pods</h3>
+            <span class="indent">Aggregations or summarization of data across collections of pods</span><br \>
+            <span class="indent">Dangers: staleness, trust, censorship, &mldr;</span>
+        </li>-->
+    </ul>
+</section>
+
+<section id="shape-index" class="slide" inlist="" rel="schema:hasPart" resource="#shape-index">
+    <h2 property="schema:name" style="font-size: 1.9em">Pods exposing <em>shape information</em> allows query engines to skip many links</h2>
+    <center>
+        <img src="img/shapeindex.png" alt="Shape index" style="height: 300px" \>
+    </center>
+    <ul>
+        <li style="font-size: 0.75em"><em><a href="https://arxiv.org/pdf/2407.00998v2">Tam, Bryan-Elliott, et al. "Opportunities for Shape-based Optimization of Link Traversal Queries." arXiv preprint arXiv:2407.00998 (2024).</a></em></li>
+    </ul>
+</section>
+
+<section id="query-planning" class="slide" inlist="" rel="schema:hasPart" resource="#query-planning">
+    <h2 property="schema:name" style="font-size: 1.9em">Pods exposing <em>cardinality information</em> allows engines to make better query plans</h2>
+    <center>
+        <img src="img/queryplans.png" alt="Query plan times" style="height: 300px" \>
+    </center>
+    <ul>
+        <li style="font-size: 0.75em"><em>Hanski, Jonni, et al. "Link Traversal over Decentralised Environments
+            using Restart-Based Query Planning." ICWE 2025.</em></li>
+    </ul>
+</section>
+
+<section id="conclusions" class="slide" inlist="" rel="schema:hasPart" resource="#conclusions">
+    <h2 property="schema:name">Let's optimize client-driven execution!</h2>
+    <center><img src="img/comunica_white_on_red.svg" width="20%" style="float: right" /></center>
+    <ul>
+        <li>
+            <h3>Comunica can query over Solid pods</h3>
+            <span class="indent">Based on following links.</span><br \>
+            <span class="indent">Fast for simple queries.</span><br \>
+            <span class="indent"><a href="https://comunica.dev/docs/query/advanced/solid/">https://comunica.dev/docs/query/advanced/solid/</a></span>
+        </li>
+        <li>
+            <h3>More research is needed</h3>
+            <span class="indent">Complex intra- and inter-pod queries.</span><br \>
+            <span class="indent">Shape indexes, aggregations, &mldr;</span>
+        </li>
+        <li>
+            <h3>We investigate these challenges at Ghent University</h3>
+            <span class="indent"><a href="https://www.rubensworks.net/contact/">Contact me</a> to collaborate!</span><br \>
+            <span class="indent">&nbsp;&nbsp;<a href="https://www.rubensworks.net/contact/">https://www.rubensworks.net/contact/</a></span>
+        </li>
+    </ul>
+</section>
+
+<footer>
+    <p class="license">
+        &#169; <span property="schema:copyrightYear">2025</span> <a href="https://www.rubensworks.net" rel="schema:copyrightHolder"><span resource="https://www.rubensworks.net/#me">Ruben Taelman</span></a>
+        — <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" property="schema:license">Creative Commons Attribution 4.0</a>, unless otherwise indicated.
+    </p>
+    <a href="https://github.com/rubensworks/slides-2025-sosy-querydecentralized">Source</a>
+</footer>
+
+<script src="node_modules/shower-core/shower.min.js"></script>
+</body>
+</html>
