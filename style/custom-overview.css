@@ -1,0 +1,55 @@
+/*var defs*/
+* {
+    --color-key: #486081;
+    --slide-background: #f6fdf5;
+    --color-prim: #1a4e66;
+    --color-sec: #e26c22;
+    --color-ter: white;
+    --color-href: var(--color-sec);
+}
+
+.caption {
+    border-top: 10px solid var(--color-prim);
+    background: var(--color-prim);
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.caption .title {
+    padding-left: 0.5em;
+}
+
+.caption h1 {
+    color: var(--color-ter);
+    font-weight: bold;
+}
+
+header .subtitle {
+    font-weight: bold;
+    padding: 0.4em;
+}
+
+header .author {
+    font-size: 0.6em;
+    padding-bottom: 0.3em;
+    line-height: 1.1em;
+}
+
+header .affiliation {
+    font-size: 0.5em;
+    font-style: italic;
+}
+
+header .venue {
+    font-size: 0.5em;
+    font-style: italic;
+}
+
+.captiondata {
+    background-color: var(--color-prim);
+    padding: 0.5em;
+}
+
+.caption .captiondata p {
+    color: var(--color-ter);
+}

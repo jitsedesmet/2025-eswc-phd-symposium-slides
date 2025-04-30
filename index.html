@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="stylesheet" href="node_modules/shower-material/styles/styles.css">
+    <link rel="stylesheet" href="style/custom-slides.css">
+    <link rel="stylesheet" href="style/custom-overview.css">
 
     <link rel="foaf:maker" href="https://jitsedesmet.be/" />
     <link rel="me" href="https://mastodon.social/@smetje007"/>
@@ -43,9 +45,6 @@
         <li><h3>Massive number of globally distributed sources</h3></li>
         <li><h3>Permissioned data</h3></li>
     </ul>
-    <div style="text-align: center">
-        <img src="img/solid-logo.svg" alt="Solid Logo" style="height: 200px; margin: 0px" \>
-    </div>
 </section>
 
 <section id="complexity-devs" class="slide" inlist="" rel="schema:hasPart" resource="#complexity-devs">
@@ -69,13 +68,6 @@
 <section id="connection-point" class="slide" inlist="" rel="schema:hasPart" resource="#connection-point">
     <h2 property="schema:name" class="big" style="margin-top: 20px; font-size: 1.9em">Abstract access to DKGs with query engines</h2>
     <h3>Hide the complexities of reading and writing for app developers</h3>
-    <center>
-        <img src="img/computer.png" alt="Application" width="150px" style="margin-right: 20px" />
-        <span style="font-size: 6em; vertical-align: baseline; position: relative; top: -40px">&harr;</span>
-        <img src="img/gear.png" alt="Gear" width="170px" />
-        <span style="font-size: 6em; vertical-align: baseline; position: relative; top: -40px">&harr;</span>
-        <img src="img/globe.png" alt="Globe" width="150px" style="margin-left: 20px" />
-    </center>
     <p style="font-style: italic; float: left">SPARQL, GraphQL, &mldr;</p>
     <p style="text-align: right; font-style: italic"><a href="https://www.flaticon.com/free-icons/application" title="application icons">Image credit</a></p>
 </section>
@@ -93,9 +85,6 @@
               <span class="indent">➖ Slow for complex queries</span>
         </li>
     </ul>
-    <center>
-        <img src="img/follow-links.svg" alt="Follow links" style="height: 180px" \>
-    </center>
 </section>
 
 <section id="link-traversal-results" class="slide" inlist="" rel="schema:hasPart" resource="#link-traversal-results">
@@ -112,10 +101,6 @@
 
 <section id="slow-queries" class="slide" inlist="" rel="schema:hasPart" resource="#slow-queries">
     <h2 property="schema:name" style="font-size: 1.9em">Query execution time mainly influenced by number of followed links</h2>
-    <center>
-        <img src="img/queue-discover-4.svg" alt="Link queue Discover 4" style="height: 260px" \>
-        <img src="img/queue-complex-2.svg" alt="Link queue Complex 2" style="height: 260px" \>
-    </center>
     <ul>
         <li>Queries requiring few links are fast (Discover 4)</li>
         <li>Queries requiring many links are slower (Complex 2)</li>
@@ -144,9 +129,6 @@
 
 <section id="shape-index" class="slide" inlist="" rel="schema:hasPart" resource="#shape-index">
     <h2 property="schema:name" style="font-size: 1.9em">Pods exposing <em>shape information</em> allows query engines to skip many links</h2>
-    <center>
-        <img src="img/shapeindex.png" alt="Shape index" style="height: 300px" \>
-    </center>
     <ul>
         <li style="font-size: 0.75em"><em><a href="https://arxiv.org/pdf/2407.00998v2">Tam, Bryan-Elliott, et al. "Opportunities for Shape-based Optimization of Link Traversal Queries." arXiv preprint arXiv:2407.00998 (2024).</a></em></li>
     </ul>
@@ -154,9 +136,6 @@
 
 <section id="query-planning" class="slide" inlist="" rel="schema:hasPart" resource="#query-planning">
     <h2 property="schema:name" style="font-size: 1.9em">Pods exposing <em>cardinality information</em> allows engines to make better query plans</h2>
-    <center>
-        <img src="img/queryplans.png" alt="Query plan times" style="height: 300px" \>
-    </center>
     <ul>
         <li style="font-size: 0.75em"><em>Hanski, Jonni, et al. "Link Traversal over Decentralised Environments
             using Restart-Based Query Planning." ICWE 2025.</em></li>
@@ -165,7 +144,6 @@
 
 <section id="conclusions" class="slide" inlist="" rel="schema:hasPart" resource="#conclusions">
     <h2 property="schema:name">Let's optimize client-driven execution!</h2>
-    <center><img src="img/comunica_white_on_red.svg" width="20%" style="float: right" /></center>
     <ul>
         <li>
             <h3>Comunica can query over Solid pods</h3>
