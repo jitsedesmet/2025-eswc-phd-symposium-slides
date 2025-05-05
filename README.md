@@ -3,6 +3,7 @@
 **Live version: **
 
 These slides are created using the [shower](https://github.com/shower/shower) framework.
+Live example of example slides: https://shwr.me/shower/themes/material/#43
 
 ## Build
 

@@ -9,7 +9,8 @@
 }
 
 a,
-.slide a {
+.slide a,
+.badge a {
     color: var(--color-href);
     text-decoration: none;
     border-bottom: 2px solid #b8c3d1;
@@ -20,7 +21,7 @@ a,
     transition: .2s;
     background-image: none !important;
 }
-a:hover {
+a:hover, .badge a:hover {
     color: var(--color-href);
     border-bottom: 2px solid var(--color-href);
 }
@@ -32,23 +33,6 @@ h1, h2, h3, h4, h5, h6, .subtitle {
 .shower.list, .slide {
     color: var(--color-prim);
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.badge a:hover {
-    border-bottom: none;
-}
-
-footer {
-    border-top: 2px solid var(--color-prim);
-    padding: 30px 0 30px 30px;
-    background-color: var(--color-prim);
-    color: var(--color-ter);
-    font-size: 0.5em;
-    width: 100%;
-}
-
-footer a {
-    color: var(--color-href);
 }
 
 .slide {
@@ -206,19 +190,4 @@ iframe {
     border: none;
     width: 100%;
     height: 462px;
-}
-
-@media print {
-    .slide {
-        background: white;
-    }
-
-    footer {
-        display: none;
-    }
-
-    .slide.index {
-        border-top: none;
-        border-bottom: none;
-    }
 }
