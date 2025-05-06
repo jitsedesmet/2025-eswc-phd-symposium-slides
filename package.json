@@ -9,7 +9,7 @@
     "dev": "shower serve",
     "pdf": "shower pdf",
     "archive": "shower archive",
-    "build": "shower prepare"
+    "build": "shower bundle"
   },
   "dependencies": {
     "@shower/core": "^3.3.0",
