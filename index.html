@@ -43,8 +43,8 @@
 <section id="start" class="slide" rel="schema:hasPart" resource="#start">
     <h2 property="schema:name">Overview</h2>
     <ul>
-        <li><h3>What are decentralized data ecosystems?</h3></li>
-        <li><h3>What issues do they face?</h3></li>
+        <li><h3>Decentralized data ecosystems</h3></li>
+        <li><h3>Issues faced</h3></li>
         <li><h3>System walkthrough</h3>
             <ul>
                 <li>Interfaces</li>
@@ -57,91 +57,123 @@
     </ul>
 </section>
 
-<section id="complexity-devs" class="slide" inlist="" rel="schema:hasPart" resource="#complexity-devs">
-    <h2 property="schema:name" class="big" style="margin-top: 20px; font-size: 2em">Difficulties for user-facing app developers</h2>
-    <ul>
-        <li>
-            <h3>Discovering data</h3>
-            <span class="indent" style="font-style:italic">How can I find pods? How can I find data within a pod?</span>
-        </li>
-        <li>
-            <h3>Combining data</h3>
-            <span class="indent" style="font-style:italic">How to combine data across different pods?</span>
-        </li>
-        <li>
-            <h3>Preserving privacy</h3>
-            <span class="indent" style="font-style:italic">How to not leak sensitive data?</span>
-        </li>
-    </ul>
+<section id="decentralized-envs" class="slide" rel="schema:hasPart" resource="#decentralized-envs">
+    <h2 property="schema:name">What are decentralized data ecosystems?</h2>
+    <div style="display: grid; height: 100%; grid-template-columns: 1fr 1fr 0.75fr;
+    background: linear-gradient(#969696,#969696) 33%/2px 70% no-repeat; background-position: 33% 20%">
+        <div>
+            Around Consumers
+            <img src="/img/phd-symposium-presentation-decentral-data.drawio.png" alt="Around Consumers" style="width: 80%">
+        </div>
+        <div>
+            Around Consumers
+            <img src="/img/phd-symposium-presentation-decentral-data.drawio.png" alt="Around Consumers" style="width: 80%">
+        </div>
+        <div>
+            <div style="height: 1.5rem"></div>
+            <ol>
+                <li>Relives SMEs cost</li>
+                <li>Data quality</li>
+                <li>Sparks innovation</li>
+            </ol>
+        </div>
+    </div>
 </section>
 
-<section id="connection-point" class="slide" inlist="" rel="schema:hasPart" resource="#connection-point">
-    <h2 property="schema:name" class="big" style="margin-top: 20px; font-size: 1.9em">Abstract access to DKGs with query engines</h2>
-    <h3>Hide the complexities of reading and writing for app developers</h3>
-    <p style="font-style: italic; float: left">SPARQL, GraphQL, &mldr;</p>
-    <p style="text-align: right; font-style: italic"><a href="https://www.flaticon.com/free-icons/application" title="application icons">Image credit</a></p>
+<section id="issues-faced" class="slide" rel="schema:hasPart" resource="#issues-faced">
+    <h2 property="schema:name">What issues are faced?</h2>
+    <ol>
+        <li>Access path data dependency [1]</li>
+    </ol>
+    <img src="img/phd-symposium-presentation-access%20path%20dependency.drawio.png"
+         style="width: 40%; position: absolute; top: 22%; right: 2rem">
+
+    <p class="note" style="line-height: 1.2; position: absolute; bottom: 0; font-size: 1.3rem;">
+        <span>[1]: De Smet Jitse, et al. "SGF: SPARQL Updates over Decentralized Knowledge Graphs without Access Path Dependencies"</span>
+    </p>
 </section>
 
-<section id="link-traversal" class="slide" inlist="" rel="schema:hasPart" resource="#link-traversal">
-    <h2 property="schema:name" style="font-size: 1.9em">Solid pods adhere to Linked Data Principles</h2>
-    <ul>
+<section id="sgf-sketched" class="slide" rel="schema:hasPart" resource="#sgf-sketched">
+    <h2 property="schema:name">What issues are faced?</h2>
+    <ol style="width: 60%">
         <li>
-            <h3>Client-side engines can discover data by following links</h3>
-            <span class="indent"><strong>Link Traversal Query Processing:</strong><br \>
-			  <span class="indent">&nbsp;&nbsp;&nbsp;&nbsp;Lookup more information about <em>things</em> by following links</span><br \><br \>
-			  <span class="indent">➕ Fully decentralized</span><br \>
-              <span class="indent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No dependency on intermediaries</span><br \>
-              <span class="indent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Robust against partial unavailability</span><br \>
-              <span class="indent">➖ Slow for complex queries</span>
+            Access path data dependency [1]
+            <br>
+            Can be solved by SGF: Describe the document resources by resource description, group strategy, ...
         </li>
-    </ul>
+    </ol>
+    <img src="img/phd-symposium-presentation-SGV%20description.drawio.png"
+         style="height: 65%; position: absolute; top: 16%; right: 5rem">
+
+    <p class="note" style="line-height: 1.2; position: absolute; bottom: 0; font-size: 1.3rem;">
+        <span>[1]: De Smet Jitse, et al. "SGF: SPARQL Updates over Decentralized Knowledge Graphs without Access Path Dependencies"</span>
+    </p>
 </section>
 
-<section id="link-traversal-results" class="slide" inlist="" rel="schema:hasPart" resource="#link-traversal-results">
-    <h2 property="schema:name" style="font-size: 1.9em">Query results arrive incrementally<br \>within human attention limits</h2>
-    <center>
-        <img src="img/querytimes_d2-3.svg" alt="Query arrival times for Query D2-3" style="height: 260px" \>
-    </center>
-    <ul>
-        <li>SPARQL query with 6 triple patterns</li>
-        <li>Across 1.531 simulated Solid pods (158.233 files, 3.556.159 triples)</li>
-        <li style="font-size: 0.75em"><em><a href="https://comunica.github.io/Article-ISWC2023-SolidQuery/">Taelman, Ruben, and Ruben Verborgh. "Link traversal query processing over decentralized environments with structural assumptions." International Semantic Web Conference 2023.</a></em></li>
-    </ul>
+<section id="issues-faced-ctd" class="slide" rel="schema:hasPart" resource="#issues-faced-ctd">
+    <h2 property="schema:name">What issues are faced?</h2>
+    <ol style="width: 60%">
+        <li>Access path data dependency [1]</li>
+        <li>Write semantics [2]</li>
+        <li>Interface heterogeneity [3]</li>
+    </ol>
+
+    <p class="note" style="line-height: 1.2; font-size: 1.3rem; position: absolute; bottom: 0">
+        <span>[1]: De Smet Jitse, et al. "SGF: SPARQL Updates over Decentralized Knowledge Graphs without Access Path Dependencies"</span>
+        <br>
+        <span>[2]: Dedecker, Ruben, et al. "What's in a Pod? a knowledge graph interpretation for the Solid ecosystem."</span>
+        <br>
+        <span>[3]: Verborgh, Ruben, et al. "Web-Scale Querying through Linked Data Fragments."</span>
+    </p>
 </section>
 
-<section id="slow-queries" class="slide" inlist="" rel="schema:hasPart" resource="#slow-queries">
-    <h2 property="schema:name" style="font-size: 1.9em">Query execution time mainly influenced by number of followed links</h2>
-    <ul>
-        <li>Queries requiring few links are fast (Discover 4)</li>
-        <li>Queries requiring many links are slower (Complex 2)</li>
-        <li style="font-size: 0.75em"><em><a href="https://rubeneschauzier.github.io/QuWeDa2023-Link-Queue-Analysis-Camera-Ready/QuWeDa_2023_Link_Queue_Analysis_Final.pdf">Eschauzier, Ruben, Ruben Taelman, and Ruben Verborgh. "How Does the Link Queue Evolve during Traversal-Based Query Processing?." QuWeDa/MEPDaW@ISWC. 2023.</a></em></li>
-    </ul>
+<section id="start-walkthrough" class="slide" inlist="" rel="schema:hasPart" resource="#start-walkthrough">
+    <h2 class="shout">
+        System Walkthrough
+    </h2>
 </section>
 
-<section id="challenges" class="slide" inlist="" rel="schema:hasPart" resource="#challenges">
-    <h2 property="schema:name">If pods expose more information, complex querying can become faster</h2>
-    <ul>
-        <li>
-            <h3>When following links, engines can <em>discover</em> optimizations</h3>
-            <span class="indent">If pods expose them</span>
-        </li>
-        <!--<li>
-              <h3>A pod can guide engines more efficiently towards relevant data</h3>
-            <span class="indent">Type indexes, shape trees, shape indexes, &mldr;</span>
-        </li>
-        <li>
-              <h3>Cross-pod indexes can prune out irrelevant pods</h3>
-            <span class="indent">Aggregations or summarization of data across collections of pods</span><br \>
-            <span class="indent">Dangers: staleness, trust, censorship, &mldr;</span>
-        </li>-->
-    </ul>
+<section id="walkthrough-interfaces" class="slide" rel="schema:hasPart" resource="#walkthrough-interfaces">
+    <h1>Interfaces: polyglot system</h1>
+    <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
+        <img src="img/phd-symposium-presentation-polyglot%20database.drawio.png"
+             style="width: 50%"/>
+        <div class="next" style="background: #d9d2e9; padding: 0.5rem 1rem; line-height: 1.3">
+            RQ1: What are the requirements for update interfaces in decentralized environments, and how do they differentiate themselves?
+        </div>
+    </div>
+
+    <p class="note" style="line-height: 1.2; font-size: 1.3rem; position: absolute; bottom: 0">
+        <span>[4]: Khine, P.P., Wang, Z.: "A review of polyglot persistence in the big data world"</span>
+    </p>
 </section>
 
-<section id="shape-index" class="slide" inlist="" rel="schema:hasPart" resource="#shape-index">
-    <h2 property="schema:name" style="font-size: 1.9em">Pods exposing <em>shape information</em> allows query engines to skip many links</h2>
-    <ul>
-        <li style="font-size: 0.75em"><em><a href="https://arxiv.org/pdf/2407.00998v2">Tam, Bryan-Elliott, et al. "Opportunities for Shape-based Optimization of Link Traversal Queries." arXiv preprint arXiv:2407.00998 (2024).</a></em></li>
-    </ul>
+
+<section id="heterogeneity" class="slide" rel="schema:hasPart" resource="#heterogeneity">
+    <h1>Interfaces: heterogeneity</h1>
+    <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
+        <img src="img/phd-symposium-presentation-read%20abstraction.drawio.png"
+             style="width: 38%"/>
+    </div>
+
+    <p class="note" style="line-height: 1.2; font-size: 1.3rem; position: absolute; bottom: 0">
+        <span>[5]: Taelman Ruben et al. "Comunica: A Modular SPARQL Query Engine for the Web"</span>
+    </p>
+</section>
+
+<section id="descriptions" class="slide" rel="schema:hasPart" resource="#shape-index">
+    <h1>Interfaces: descriptions</h1>
+    <img src="img/phd-symposium-presentation-selected%20write%20interface.drawio.png"
+         style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
+
+    <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 7rem">
+        <div class="next" style="width: 55%; background: #d9d2e9; padding: 0.5rem 1rem; line-height: 1.3">
+            RQ2: How can interfaces describe themselves sufficiently such that automated agents can interact with them?
+        </div>
+        <p class="note" style="line-height: 1.2; font-size: 1.3rem;">
+            <span>[6]: Markus Lanthaler. "Hydra Core Vocabulary"</span>
+        </p>
+    </div>
 </section>
 
 <section id="query-planning" class="slide" inlist="" rel="schema:hasPart" resource="#query-planning">
