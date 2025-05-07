@@ -4,6 +4,8 @@
     <title>PhD Symposium | Jitse De Smet</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <link rel="stylesheet" href="styles/presentation-specific.css">
     <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
     <link rel="stylesheet" href="styles/custom-slides.css">
     <link rel="stylesheet" href="styles/custom-overview.css">
@@ -17,7 +19,7 @@
         }
     </style>
 </head>
-<body class="shower list grid" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# org: http://www.w3.org/ns/org# schema: http://schema.org/ cite: http://purl.org/spar/cito/" typeof="schema:PresentationDigitalDocument">
+<body class="shower list" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# org: http://www.w3.org/ns/org# schema: http://schema.org/ cite: http://purl.org/spar/cito/" typeof="schema:PresentationDigitalDocument">
 <header class="caption">
     <div class="title">
         <h1 property="schema:name">Optimizing Write Performance in Decentralized Data Ecosystems</h1>
@@ -133,12 +135,12 @@
     </h2>
 </section>
 
-<section id="walkthrough-interfaces" class="slide" rel="schema:hasPart" resource="#walkthrough-interfaces">
-    <h1>Interfaces: polyglot system</h1>
+<section id="polyglot-system" class="slide" rel="schema:hasPart" resource="#polyglot-system">
+    <h2>Interfaces: polyglot system</h2>
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
         <img src="img/phd-symposium-presentation-polyglot%20database.drawio.png"
              style="width: 50%"/>
-        <div class="next" style="background: #d9d2e9; padding: 0.5rem 1rem; line-height: 1.3">
+        <div class="next" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
             RQ1: What are the requirements for update interfaces in decentralized environments, and how do they differentiate themselves?
         </div>
     </div>
@@ -150,7 +152,7 @@
 
 
 <section id="heterogeneity" class="slide" rel="schema:hasPart" resource="#heterogeneity">
-    <h1>Interfaces: heterogeneity</h1>
+    <h2>Interfaces: heterogeneity</h2>
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
         <img src="img/phd-symposium-presentation-read%20abstraction.drawio.png"
              style="width: 38%"/>
@@ -162,12 +164,12 @@
 </section>
 
 <section id="descriptions" class="slide" rel="schema:hasPart" resource="#shape-index">
-    <h1>Interfaces: descriptions</h1>
+    <h2>Interfaces: descriptions</h2>
     <img src="img/phd-symposium-presentation-selected%20write%20interface.drawio.png"
          style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
 
     <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 7rem">
-        <div class="next" style="width: 55%; background: #d9d2e9; padding: 0.5rem 1rem; line-height: 1.3">
+        <div class="next" style="width: 55%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
             RQ2: How can interfaces describe themselves sufficiently such that automated agents can interact with them?
         </div>
         <p class="note" style="line-height: 1.2; font-size: 1.3rem;">
@@ -176,47 +178,127 @@
     </div>
 </section>
 
-<section id="query-planning" class="slide" inlist="" rel="schema:hasPart" resource="#query-planning">
-    <h2 property="schema:name" style="font-size: 1.9em">Pods exposing <em>cardinality information</em> allows engines to make better query plans</h2>
-    <ul>
-        <li style="font-size: 0.75em"><em>Hanski, Jonni, et al. "Link Traversal over Decentralised Environments
-            using Restart-Based Query Planning." ICWE 2025.</em></li>
-    </ul>
+<section id="intermediate-update-single" class="slide" inlist="" rel="schema:hasPart" resource="#intermediate-update-single">
+    <h2 property="schema:name"
+        style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+        font-size: 4rem; white-space: nowrap"
+    >Update single datastore</h2>
 </section>
 
-<section id="conclusions" class="slide" inlist="" rel="schema:hasPart" resource="#conclusions">
-    <h2 property="schema:name">Let's optimize client-driven execution!</h2>
-    <ul>
-        <li>
-            <h3>Comunica can query over Solid pods</h3>
-            <span class="indent">Based on following links.</span><br \>
-            <span class="indent">Fast for simple queries.</span><br \>
-            <span class="indent"><a href="https://comunica.dev/docs/query/advanced/solid/">https://comunica.dev/docs/query/advanced/solid/</a></span>
-        </li>
-        <li>
-            <h3>More research is needed</h3>
-            <span class="indent">Complex intra- and inter-pod queries.</span><br \>
-            <span class="indent">Shape indexes, aggregations, &mldr;</span>
-        </li>
-        <li>
-            <h3>We investigate these challenges at Ghent University</h3>
-            <span class="indent"><a href="https://www.rubensworks.net/contact/">Contact me</a> to collaborate!</span><br \>
-            <span class="indent">&nbsp;&nbsp;<a href="https://www.rubensworks.net/contact/">https://www.rubensworks.net/contact/</a></span>
-        </li>
-    </ul>
+<section id="interface-discover-select" class="slide" inlist="" rel="schema:hasPart" resource="#interface-discover-select">
+    <h2 property="schema:name">Single datastore: discovery & selection</h2>
+    <img src="img/phd-symposium-presentation-intro%20abstraction.drawio.png"
+         style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
+
+    <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 10rem">
+        <div class="" style="width: 45%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
+            RQ 3&4: How can the scheduler discover and select the interface most suitable for a given update query and user?
+        </div>
+        <p class="note" style="line-height: 1.2; font-size: 1.3rem;">
+            <span>[6]: Markus Lanthaler. "Hydra Core Vocabulary"</span>
+        </p>
+    </div>
 </section>
 
-<footer class="badge">
-    <p class="license">
+<section id="scheduling" class="slide" inlist="" rel="schema:hasPart" resource="#scheduling">
+    <h2 property="schema:name">Single datastore: schedule update</h2>
+    <img src="img/phd-symposium-presentation-selected%20write%20interface.drawio(1).png"
+         style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
+
+    <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 8rem">
+        <div class="" style="width: 45%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
+            RQ 5: How to schedule the execution of an update query over a single data store using the selected interface?
+        </div>
+        <p class="note" style="line-height: 1.2; font-size: 1.3rem;">
+            <span>[6]: Markus Lanthaler. "Hydra Core Vocabulary"</span>
+        </p>
+    </div>
+</section>
+
+<section id="intermediate-update-multiple" class="slide" inlist="" rel="schema:hasPart" resource="#intermediate-update-multiple">
+    <h2 property="schema:name"
+        style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+        font-size: 4rem; white-space: nowrap"
+    >Update multiple datastore</h2>
+</section>
+
+<section id="schedule-multiple" class="slide" inlist="" rel="schema:hasPart" resource="#schedule-multiple">
+    <h2 property="schema:name">Multiple datastores: schedule update</h2>
+    <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
+        <img src="img/phd-symposium-presentation-multiple%20datasets.drawio.png"
+             style="width: 90%"/>
+        <div class="" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
+            RQ 6: How can we schedule an update query over multiple data stores?
+        </div>
+    </div>
+</section>
+
+<section id="acid-transaction" class="slide" inlist="" rel="schema:hasPart" resource="#acid-transaction">
+    <h2 property="schema:name">Multiple datastores: transaction</h2>
+    <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
+        <img src="img/phd-symposium-presentation-ACID.drawio.png"
+             style="width: 90%"/>
+        <div class="" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
+            RQ 7: How can we support the atomicity property of ACID-transactions across multiple data stores?
+        </div>
+    </div>
+</section>
+
+<section id="evaluation" class="slide" inlist="" rel="schema:hasPart" resource="#evaluation">
+    <h2 property="schema:name">Evaluation</h2>
+    Evaluation by extending SolidBench:
+    <ol>
+        <li>Update execution time</li>
+        <li>Number of HTTP requests</li>
+        <li>Number and scope of transaction locks</li>
+        <li>Recovery time of transaction rewind</li>
+        <li>Inconsistent state durations</li>
+        <li>Robustness against random failures</li>
+    </ol>
+</section>
+
+<section id="conclusion" class="slide" inlist="" rel="schema:hasPart" resource="#conclusion">
+    <div style="display: flex; height: 100%; flex-direction: column">
+        <h2 property="schema:name">Conclusion</h2>
+        <div style="display: flex; flex: 1; align-items: center;">
+            <img src="img/phd-symposium-presentation-multiple%20datasets.drawio.png"
+                 style="flex: 1; object-fit: contain; max-width: 62%"/>
+            <div style="margin-left: auto">
+                <ul>
+                    <li>Insight to update interfaces</li>
+                    <li>Insight to update scheduling</li>
+                </ul>
+                <hr style="margin: 0 0 1rem 1rem;"/>
+                <ul>
+                    <li>Relieves SMEs cost</li>
+                    <li>Data quality</li>
+                    <li>Sparks innovation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<!--    <div style="display: flex; height: 86%; width: 100%; align-items: center; background: grey; box-sizing: border-box">-->
+<!--        <img src="img/phd-symposium-presentation-multiple%20datasets.drawio.png"-->
+<!--             style="flex-grow: 1; object-fit: contain; max-width: 100%"/>-->
+<!--        <div>-->
+<!--            test-->
+<!--        </div>-->
+<!--    </div>-->
+</section>
+
+<footer>
+    <p class="license" style="margin-top: auto">
         &#169; <span property="schema:copyrightYear">2025</span>
         <a href="https://www.rubensworks.net" rel="schema:copyrightHolder"><span resource="https://jitsedesmet.be/profile/#me">Jitse De Smet</span></a>
         <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" property="schema:license">Creative Commons Attribution 4.0</a>, unless otherwise indicated.
     </p>
     <a href="https://github.com/jitsedesmet/2025-eswc-phd-symposium-slides" style="display: flex;
+        justify-content: center;
         align-items: center;
         vertical-align: center;
         gap: 0.2rem;">
-        <svg style="color: black" aria-hidden="true" viewBox="0 0 24 24" version="1.1" data-view-component="true"
+        <svg aria-hidden="true" viewBox="0 0 24 24" version="1.1" data-view-component="true"
              class="octicon octicon-mark-github v-align-middle">
             <path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path>
         </svg>
