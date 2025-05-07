@@ -190,7 +190,7 @@
     <img src="img/discover-select.drawio.png"
          style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
 
-    <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 10rem">
+    <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 9rem">
         <div class="next" style="width: 45%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
             RQ 3&4: How can the scheduler discover and select the interface most suitable for a given update query and user?
         </div>
@@ -244,9 +244,9 @@
     </div>
 </section>
 
-<section id="evaluation" class="slide" inlist="" rel="schema:hasPart" resource="#evaluation">
+<section id="evaluation" class="slide" style="display: flex; flex-direction: column" rel="schema:hasPart" resource="#evaluation">
     <h2 property="schema:name">Evaluation</h2>
-    Evaluation by extending SolidBench:
+    Evaluation by extending SolidBench[7]:
     <ol>
         <li>Update execution time</li>
         <li>Number of HTTP requests</li>
@@ -255,6 +255,9 @@
         <li>Inconsistent state durations</li>
         <li>Robustness against random failures</li>
     </ol>
+    <p class="note" style="line-height: 1.2; font-size: 1.3rem; margin-top: auto">
+        <span>[7]: Ruben Taelman. "Evaluation of Link Traversal Query Execution over Decentralized Environments with Structural Assumptions"</span>
+    </p>
 </section>
 
 <section id="conclusion" class="slide" inlist="" rel="schema:hasPart" resource="#conclusion">
