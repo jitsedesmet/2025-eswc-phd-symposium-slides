@@ -47,11 +47,11 @@
     <ul>
         <li><h3>Decentralized data ecosystems</h3></li>
         <li><h3>Issues faced</h3></li>
-        <li><h3>System walkthrough</h3>
+        <li><h3 style="margin-bottom: 0.5rem">System walkthrough</h3>
             <ul>
-                <li>Interfaces</li>
-                <li>update single dataset</li>
-                <li>update multiple datasets</li>
+                <li style="margin-bottom: 0.5rem;">Interfaces</li>
+                <li style="margin-bottom: 0.5rem;">update single dataset</li>
+                <li style="margin-bottom: 0.5rem;">update multiple datasets</li>
             </ul>
         </li>
         <li><h3>Evaluation</h3></li>
@@ -65,11 +65,11 @@
     background: linear-gradient(#969696,#969696) 33%/2px 70% no-repeat; background-position: 33% 20%">
         <div>
             Around Consumers
-            <img src="/img/phd-symposium-presentation-decentral-data.drawio.png" alt="Around Consumers" style="width: 80%">
+            <img src="/img/central-data.drawio.png" alt="Around Consumers" style="width: 80%">
         </div>
         <div>
-            Around Consumers
-            <img src="/img/phd-symposium-presentation-decentral-data.drawio.png" alt="Around Consumers" style="width: 80%">
+            Around Producers
+            <img src="/img/decentral-data.drawio.png" alt="Around Consumers" style="width: 80%">
         </div>
         <div>
             <div style="height: 1.5rem"></div>
@@ -87,7 +87,7 @@
     <ol>
         <li>Access path data dependency [1]</li>
     </ol>
-    <img src="img/phd-symposium-presentation-access%20path%20dependency.drawio.png"
+    <img src="img/access-path-dependency.drawio.png"
          style="width: 40%; position: absolute; top: 22%; right: 2rem">
 
     <p class="note" style="line-height: 1.2; position: absolute; bottom: 0; font-size: 1.3rem;">
@@ -104,7 +104,7 @@
             Can be solved by SGF: Describe the document resources by resource description, group strategy, ...
         </li>
     </ol>
-    <img src="img/phd-symposium-presentation-SGV%20description.drawio.png"
+    <img src="img/SGV-description.drawio.png"
          style="height: 65%; position: absolute; top: 16%; right: 5rem">
 
     <p class="note" style="line-height: 1.2; position: absolute; bottom: 0; font-size: 1.3rem;">
@@ -138,7 +138,7 @@
 <section id="polyglot-system" class="slide" rel="schema:hasPart" resource="#polyglot-system">
     <h2>Interfaces: polyglot system</h2>
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
-        <img src="img/phd-symposium-presentation-polyglot%20database.drawio.png"
+        <img src="img/polyglot-database.drawio.png"
              style="width: 50%"/>
         <div class="next" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
             RQ1: What are the requirements for update interfaces in decentralized environments, and how do they differentiate themselves?
@@ -154,7 +154,7 @@
 <section id="heterogeneity" class="slide" rel="schema:hasPart" resource="#heterogeneity">
     <h2>Interfaces: heterogeneity</h2>
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
-        <img src="img/phd-symposium-presentation-read%20abstraction.drawio.png"
+        <img src="img/read-abstraction.drawio.png"
              style="width: 38%"/>
     </div>
 
@@ -165,7 +165,7 @@
 
 <section id="descriptions" class="slide" rel="schema:hasPart" resource="#shape-index">
     <h2>Interfaces: descriptions</h2>
-    <img src="img/phd-symposium-presentation-selected%20write%20interface.drawio.png"
+    <img src="img/write-described.drawio.png"
          style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
 
     <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 7rem">
@@ -187,11 +187,11 @@
 
 <section id="interface-discover-select" class="slide" inlist="" rel="schema:hasPart" resource="#interface-discover-select">
     <h2 property="schema:name">Single datastore: discovery & selection</h2>
-    <img src="img/phd-symposium-presentation-intro%20abstraction.drawio.png"
+    <img src="img/discover-select.drawio.png"
          style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
 
     <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 10rem">
-        <div class="" style="width: 45%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
+        <div class="next" style="width: 45%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
             RQ 3&4: How can the scheduler discover and select the interface most suitable for a given update query and user?
         </div>
         <p class="note" style="line-height: 1.2; font-size: 1.3rem;">
@@ -202,11 +202,11 @@
 
 <section id="scheduling" class="slide" inlist="" rel="schema:hasPart" resource="#scheduling">
     <h2 property="schema:name">Single datastore: schedule update</h2>
-    <img src="img/phd-symposium-presentation-selected%20write%20interface.drawio(1).png"
+    <img src="img/selected-write-interface.drawio.png"
          style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
 
     <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 8rem">
-        <div class="" style="width: 45%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
+        <div class="next" style="width: 45%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
             RQ 5: How to schedule the execution of an update query over a single data store using the selected interface?
         </div>
         <p class="note" style="line-height: 1.2; font-size: 1.3rem;">
@@ -225,9 +225,9 @@
 <section id="schedule-multiple" class="slide" inlist="" rel="schema:hasPart" resource="#schedule-multiple">
     <h2 property="schema:name">Multiple datastores: schedule update</h2>
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
-        <img src="img/phd-symposium-presentation-multiple%20datasets.drawio.png"
+        <img src="img/multiple-datasets.drawio.png"
              style="width: 90%"/>
-        <div class="" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
+        <div class="next" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
             RQ 6: How can we schedule an update query over multiple data stores?
         </div>
     </div>
@@ -236,9 +236,9 @@
 <section id="acid-transaction" class="slide" inlist="" rel="schema:hasPart" resource="#acid-transaction">
     <h2 property="schema:name">Multiple datastores: transaction</h2>
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
-        <img src="img/phd-symposium-presentation-ACID.drawio.png"
+        <img src="img/ACID.drawio.png"
              style="width: 90%"/>
-        <div class="" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
+        <div class="next" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
             RQ 7: How can we support the atomicity property of ACID-transactions across multiple data stores?
         </div>
     </div>
@@ -261,7 +261,7 @@
     <div style="display: flex; height: 100%; flex-direction: column">
         <h2 property="schema:name">Conclusion</h2>
         <div style="display: flex; flex: 1; align-items: center;">
-            <img src="img/phd-symposium-presentation-multiple%20datasets.drawio.png"
+            <img src="img/multiple-datasets.drawio.png"
                  style="flex: 1; object-fit: contain; max-width: 62%"/>
             <div style="margin-left: auto">
                 <ul>
