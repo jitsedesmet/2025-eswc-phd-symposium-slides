@@ -59,17 +59,18 @@
     </ul>
 </section>
 
-<section id="decentralized-envs" class="slide" rel="schema:hasPart" resource="#decentralized-envs">
+<section id="decentralized-envs" class="slide" style="display: flex; flex-direction: column" rel="schema:hasPart" resource="#decentralized-envs">
     <h2 property="schema:name">What are decentralized data ecosystems?</h2>
-    <div style="display: grid; height: 100%; grid-template-columns: 1fr 1fr 0.75fr;
+    <div style="min-height: 0; display: grid; max-height: 100%; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 0.75fr);
     background: linear-gradient(#969696,#969696) 33%/2px 70% no-repeat; background-position: 33% 20%">
-        <div>
+        <div style="min-height: 0;">
             Around Consumers
-            <img src="/img/central-data.drawio.png" alt="Around Consumers" style="width: 80%">
+            <img src="/img/central-data.drawio.png" alt="Around Consumers"
+                 style="height: 80%;"/>
         </div>
-        <div>
+        <div style="min-height: 0;">
             Around Producers
-            <img src="/img/decentral-data.drawio.png" alt="Around Consumers" style="width: 80%">
+            <img src="/img/decentral-data.drawio.png" alt="Around producers" style="height: 80%">
         </div>
         <div>
             <div style="height: 1.5rem"></div>
