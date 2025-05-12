@@ -47,7 +47,7 @@
     <ul>
         <li><h3>Decentralized data ecosystems</h3></li>
         <li><h3>Issues faced</h3></li>
-        <li><h3 style="margin-bottom: 0.5rem">System walkthrough</h3>
+        <li><h3 style="margin-bottom: 0.5rem">Research questions</h3>
             <ul>
                 <li style="margin-bottom: 0.5rem;">Interfaces</li>
                 <li style="margin-bottom: 0.5rem;">update single dataset</li>
@@ -84,7 +84,7 @@
 </section>
 
 <section id="issues-faced" class="slide" rel="schema:hasPart" resource="#issues-faced">
-    <h2 property="schema:name">What issues are faced?</h2>
+    <h2 property="schema:name">Access path dependency halts adoption</h2>
     <ol>
         <li>Access path data dependency [1]</li>
     </ol>
@@ -97,7 +97,7 @@
 </section>
 
 <section id="sgf-sketched" class="slide" rel="schema:hasPart" resource="#sgf-sketched">
-    <h2 property="schema:name">What issues are faced?</h2>
+    <h2 property="schema:name">Structural descriptions can help</h2>
     <ol style="width: 60%">
         <li>
             Access path data dependency [1]
@@ -114,7 +114,7 @@
 </section>
 
 <section id="issues-faced-ctd" class="slide" rel="schema:hasPart" resource="#issues-faced-ctd">
-    <h2 property="schema:name">What issues are faced?</h2>
+    <h2 property="schema:name">Underlying issues are present</h2>
     <ol style="width: 60%">
         <li>Access path data dependency [1]</li>
         <li>Write semantics [2]</li>
@@ -131,18 +131,25 @@
 </section>
 
 <section id="start-walkthrough" class="slide" inlist="" rel="schema:hasPart" resource="#start-walkthrough">
-    <h2 class="shout">
-        System Walkthrough
-    </h2>
+    <p class="shout" style="font-size: 2em;">
+        RQ1: How to balance overall write throughput and server-side performance when updating data across a large network of permissioned, decentralized and heterogeneous RDF data stores?
+    </p>
+</section>
+
+<section id="intermediate-interfaces" class="slide" inlist="" rel="schema:hasPart" resource="#intermediate-interfaces">
+    <h2 property="schema:name"
+        style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+        font-size: 4rem; white-space: nowrap"
+    >Interfaces</h2>
 </section>
 
 <section id="polyglot-system" class="slide" rel="schema:hasPart" resource="#polyglot-system">
-    <h2>Interfaces: polyglot system</h2>
+    <h2>Datasets exposed as polyglot system</h2>
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
         <img src="img/polyglot-database.drawio.png"
              style="width: 50%"/>
         <div class="next" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
-            RQ1: What are the requirements for update interfaces in decentralized environments, and how do they differentiate themselves?
+            RQ2: What are the requirements for update interfaces in decentralized environments, and how do they differentiate themselves?
         </div>
     </div>
 
@@ -153,7 +160,7 @@
 
 
 <section id="heterogeneity" class="slide" rel="schema:hasPart" resource="#heterogeneity">
-    <h2>Interfaces: heterogeneity</h2>
+    <h2>Interfaces heterogeneity tackled for reads</h2>
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
         <img src="img/read-abstraction.drawio.png"
              style="width: 38%"/>
@@ -165,13 +172,13 @@
 </section>
 
 <section id="descriptions" class="slide" rel="schema:hasPart" resource="#shape-index">
-    <h2>Interfaces: descriptions</h2>
+    <h2>Self descriptive interfaces</h2>
     <img src="img/write-described.drawio.png"
          style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
 
     <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 7rem">
         <div class="next" style="width: 55%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
-            RQ2: How can interfaces describe themselves sufficiently such that automated agents can interact with them?
+            RQ3: How can interfaces describe themselves sufficiently such that automated agents can interact with them?
         </div>
         <p class="note" style="line-height: 1.2; font-size: 1.3rem;">
             <span>[6]: Markus Lanthaler. "Hydra Core Vocabulary"</span>
@@ -187,22 +194,21 @@
 </section>
 
 <section id="interface-discover-select" class="slide" inlist="" rel="schema:hasPart" resource="#interface-discover-select">
-    <h2 property="schema:name">Single datastore: discovery & selection</h2>
+    <h2 property="schema:name">Discovery & selection of interfaces</h2>
     <img src="img/discover-select.drawio.png"
          style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
 
     <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 9rem">
         <div class="next" style="width: 45%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
-            RQ 3&4: How can the scheduler discover and select the interface most suitable for a given update query and user?
+            RQ 4: How can the scheduler discover and select the interface most suitable for a given update query and user?
         </div>
         <p class="note" style="line-height: 1.2; font-size: 1.3rem;">
-            <span>[6]: Markus Lanthaler. "Hydra Core Vocabulary"</span>
         </p>
     </div>
 </section>
 
 <section id="scheduling" class="slide" inlist="" rel="schema:hasPart" resource="#scheduling">
-    <h2 property="schema:name">Single datastore: schedule update</h2>
+    <h2 property="schema:name">Schedule update over single dataset</h2>
     <img src="img/selected-write-interface.drawio.png"
          style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
 
@@ -224,7 +230,7 @@
 </section>
 
 <section id="schedule-multiple" class="slide" inlist="" rel="schema:hasPart" resource="#schedule-multiple">
-    <h2 property="schema:name">Multiple datastores: schedule update</h2>
+    <h2 property="schema:name">Schedule update over multiple datasets</h2>
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
         <img src="img/multiple-datasets.drawio.png"
              style="width: 90%"/>
@@ -235,7 +241,7 @@
 </section>
 
 <section id="acid-transaction" class="slide" inlist="" rel="schema:hasPart" resource="#acid-transaction">
-    <h2 property="schema:name">Multiple datastores: transaction</h2>
+    <h2 property="schema:name">ACID transaction across datasets</h2>
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
         <img src="img/ACID.drawio.png"
              style="width: 90%"/>
@@ -246,8 +252,7 @@
 </section>
 
 <section id="evaluation" class="slide" style="display: flex; flex-direction: column" rel="schema:hasPart" resource="#evaluation">
-    <h2 property="schema:name">Evaluation</h2>
-    Evaluation by extending SolidBench[7]:
+    <h2 property="schema:name">Evaluation by extending SolidBench[7]:</h2>
     <ol>
         <li>Update execution time</li>
         <li>Number of HTTP requests</li>
