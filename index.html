@@ -148,8 +148,14 @@
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
         <img src="img/polyglot-database.drawio.png"
              style="width: 50%"/>
-        <div class="next" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
+        <div class="next" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3; position: relative">
             RQ2: What are the requirements for update interfaces in decentralized environments, and how do they differentiate themselves?
+            <div class="next"
+                 style="position: absolute; right: -25px; bottom: -0px; background: var(--color-prim); color: white; padding: 10px;
+                        display: flex; justify-content: center; border-radius: 10px; transform: translate(0, 50%)">
+                <img src="img/check.svg" height="30px">
+                Literature review
+            </div>
         </div>
     </div>
 
@@ -177,8 +183,15 @@
          style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
 
     <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 7rem">
-        <div class="next" style="width: 55%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
+        <div class="next" style="width: 55%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3; position: relative">
             RQ3: How can interfaces describe themselves sufficiently such that automated agents can interact with them?
+            <div class="next"
+                 style="position: absolute; right: -25px; bottom: -10px; background: var(--color-prim); color: white; padding: 10px;
+                        display: flex; justify-content: center; border-radius: 10px; transform: translate(0, 50%)">
+                <img src="img/check.svg" height="30px">
+                Feedback loop<br>
+                Hydra, OpenAPI, MCP
+            </div>
         </div>
         <p class="note" style="line-height: 1.2; font-size: 1.3rem;">
             <span>[6]: Markus Lanthaler. "Hydra Core Vocabulary"</span>
@@ -193,19 +206,6 @@
     >Update single datastore</h2>
 </section>
 
-<section id="interface-discover-select" class="slide" inlist="" rel="schema:hasPart" resource="#interface-discover-select">
-    <h2 property="schema:name">Discovery & selection of interfaces</h2>
-    <img src="img/discover-select.drawio.png"
-         style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
-
-    <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 9rem">
-        <div class="next" style="width: 45%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
-            RQ 4: How can the scheduler discover and select the interface most suitable for a given update query and user?
-        </div>
-        <p class="note" style="line-height: 1.2; font-size: 1.3rem;">
-        </p>
-    </div>
-</section>
 
 <section id="scheduling" class="slide" inlist="" rel="schema:hasPart" resource="#scheduling">
     <h2 property="schema:name">Schedule update over single dataset</h2>
@@ -213,8 +213,15 @@
          style="width: 55%; position: absolute; top: 17%; right: 2rem"/>
 
     <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 8rem">
-        <div class="next" style="width: 45%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
-            RQ 5: How to schedule the execution of an update query over a single data store using the selected interface?
+        <div class="next" style="width: 55%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3; position: relative;">
+            RQ 4: How to schedule the execution of an update query over a single data store using the selected interface?
+            <div class="next"
+                 style="position: absolute; right: -25px; bottom: -10px; background: var(--color-prim); color: white; padding: 10px;
+                        display: flex; justify-content: center; border-radius: 10px; transform: translate(0, 50%)">
+                <img src="img/check.svg" height="30px">
+                SolidBench <br>
+                + interface select
+            </div>
         </div>
         <p class="note" style="line-height: 1.2; font-size: 1.3rem;">
             <span>[6]: Markus Lanthaler. "Hydra Core Vocabulary"</span>
@@ -234,8 +241,14 @@
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
         <img src="img/multiple-datasets.drawio.png"
              style="width: 90%"/>
-        <div class="next" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
-            RQ 6: How can we schedule an update query over multiple data stores?
+        <div class="next" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3; position: relative">
+            RQ 5: How can we schedule an update query over multiple data stores?
+            <div class="next"
+                 style="position: absolute; right: -25px; bottom: -20px; background: var(--color-prim); color: white; padding: 10px;
+                        display: flex; justify-content: center; border-radius: 10px; transform: translate(0, 50%)">
+                <img src="img/check.svg" height="30px">
+                SolidBench <br>
+            </div>
         </div>
     </div>
 </section>
@@ -245,8 +258,14 @@
     <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
         <img src="img/ACID.drawio.png"
              style="width: 90%"/>
-        <div class="next" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3">
-            RQ 7: How can we support the atomicity property of ACID-transactions across multiple data stores?
+        <div class="next" style="background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3; position:relative;">
+            RQ 6: How can we support the atomicity property of ACID-transactions across multiple data stores?
+            <div class="next"
+                 style="position: absolute; right: -25px; bottom: 5px; background: var(--color-prim); color: white; padding: 10px;
+                        display: flex; justify-content: center; border-radius: 10px; transform: translate(0, 50%)">
+                <img src="img/check.svg" height="30px">
+                SolidBench & battle test
+            </div>
         </div>
     </div>
 </section>
