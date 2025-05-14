@@ -39,7 +39,7 @@
         <li class="current"><a href="https://jitsedesmet.be/">Jitse De Smet</a></li>
     </ul>
     <p class="affiliation"><a href="http://idlab.technology/">Ghent University – imec – IDLab, Belgium</a></p>
-    <p class="affiliation"><a href="https://www.fwo.be/en/">Research Foundation - Flanders (1SB8525N)</a></p>
+    <p class="affiliation"><a href="https://www.fwo.be/en/">Research Foundation - Flanders</a></p>
 </section>
 
 <section id="start" class="slide" rel="schema:hasPart" resource="#start">
@@ -47,12 +47,12 @@
     <ul>
         <li><h3>Decentralized data ecosystems</h3></li>
         <li><h3>Issues faced</h3></li>
-        <li><h3 style="margin-bottom: 0.5rem">Research questions</h3>
-            <ul>
-                <li style="margin-bottom: 0.5rem;">Interfaces</li>
-                <li style="margin-bottom: 0.5rem;">update single dataset</li>
-                <li style="margin-bottom: 0.5rem;">update multiple datasets</li>
-            </ul>
+        <li><h3>Research questions</h3>
+<!--            <ul>-->
+<!--                <li style="margin-bottom: 0.5rem;">Interfaces</li>-->
+<!--                <li style="margin-bottom: 0.5rem;">update single dataset</li>-->
+<!--                <li style="margin-bottom: 0.5rem;">update multiple datasets</li>-->
+<!--            </ul>-->
         </li>
         <li><h3>Evaluation</h3></li>
         <li><h3>Conclusion</h3></li>
@@ -83,13 +83,11 @@
     </div>
 </section>
 
-<section id="issues-faced" class="slide" rel="schema:hasPart" resource="#issues-faced">
+<section id="issues-faced" class="slide" style="display: flex; flex-direction: column" rel="schema:hasPart" resource="#issues-faced">
     <h2 property="schema:name">Access path dependency halts adoption</h2>
-    <ol>
-        <li>Access path data dependency [1]</li>
-    </ol>
+
     <img src="img/access-path-dependency.drawio.png"
-         style="width: 40%; position: absolute; top: 22%; right: 2rem">
+         style="width: 50%; align-self: center;"/>
 
     <p class="note" style="line-height: 1.2; position: absolute; bottom: 0; font-size: 1.3rem;">
         <span>[1]: De Smet Jitse, et al. "SGF: SPARQL Updates over Decentralized Knowledge Graphs without Access Path Dependencies"</span>
@@ -98,13 +96,14 @@
 
 <section id="sgf-sketched" class="slide" rel="schema:hasPart" resource="#sgf-sketched">
     <h2 property="schema:name">Structural descriptions can help</h2>
-    <ol style="width: 60%">
-        <li>
-            Access path data dependency [1]
-            <br>
-            Can be solved by SGF: Describe the document resources by resource description, group strategy, ...
-        </li>
-    </ol>
+    <div style="width: 60%">
+        Describe:
+        <ul>
+            <li>resource description</li>
+            <li>group strategy</li>
+            <li>...</li>
+        </ul>
+    </div>
     <img src="img/SGV-description.drawio.png"
          style="height: 65%; position: absolute; top: 16%; right: 5rem">
 
@@ -113,35 +112,64 @@
     </p>
 </section>
 
-<section id="issues-faced-ctd" class="slide" rel="schema:hasPart" resource="#issues-faced-ctd">
-    <h2 property="schema:name">Underlying issues are present</h2>
-    <ol style="width: 60%">
-        <li>Access path data dependency [1]</li>
-        <li>Write semantics [2]</li>
-        <li>Interface heterogeneity [3]</li>
-    </ol>
+<section id="issues-faced-ctd" style="display: flex;  flex-direction: column;" class="slide" rel="schema:hasPart" resource="#issues-faced-ctd">
+    <h2 property="schema:name">Asymmetry is needed but breaks write semantics</h2>
+
+    <div style="min-height: 0; display: grid; max-height: 100%; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    ">
+        <div style="min-height: 0; display: flex; flex-direction: column; align-items: center">
+            Symmetric interfaces
+            <img src="/img/slides-phd-symp-interface-symmetric.svg" style="height: 100%;"/>
+        </div>
+        <div style="min-height: 0; display: flex; flex-direction: column; align-items: center;">
+            Asymmetric interfaces
+            <img src="/img/slides-phd-symp-interface-asymmetric.svg" style="height: 100%">
+        </div>
+    </div>
 
     <p class="note" style="line-height: 1.2; font-size: 1.3rem; position: absolute; bottom: 0">
-        <span>[1]: De Smet Jitse, et al. "SGF: SPARQL Updates over Decentralized Knowledge Graphs without Access Path Dependencies"</span>
-        <br>
         <span>[2]: Dedecker, Ruben, et al. "What's in a Pod? a knowledge graph interpretation for the Solid ecosystem."</span>
-        <br>
-        <span>[3]: Verborgh, Ruben, et al. "Web-Scale Querying through Linked Data Fragments."</span>
+    </p>
+</section>
+
+<section id="issues-faced-ctd-ctd" style="display: flex;  flex-direction: column;" class="slide" rel="schema:hasPart" resource="#issues-faced-ctd-ctd">
+    <h2 property="schema:name">Complexities of interface heterogeneity</h2>
+
+    <img style="align-self: center; margin-top: 5em" width="80%" src="img/tpf.svg">
+
+    <p class="note" style="line-height: 1.2; font-size: 1.3rem; position: absolute; bottom: 0">
+        <span>[3, &#169;]: Verborgh, Ruben, et al. "Web-Scale Querying through Linked Data Fragments."</span>
+    </p>
+</section>
+
+<section id="heterogeneity" class="slide" rel="schema:hasPart" resource="#heterogeneity">
+    <h2>Interfaces heterogeneity tackled for reads</h2>
+    <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
+        <img src="img/read-abstraction.drawio.png"
+             style="width: 38%"/>
+    </div>
+
+    <p class="note" style="line-height: 1.2; font-size: 1.3rem; position: absolute; bottom: 0">
+        <span>[5]: Taelman Ruben et al. "Comunica: A Modular SPARQL Query Engine for the Web"</span>
     </p>
 </section>
 
 <section id="start-walkthrough" class="slide" inlist="" rel="schema:hasPart" resource="#start-walkthrough">
     <p class="shout" style="font-size: 2em;">
-        RQ1: How to balance overall write throughput and server-side performance when updating data across a large network of permissioned, decentralized and heterogeneous RDF data stores?
+        RQ1: How to balance overall
+        <span class="highlight">write throughput</span>
+        and server-side performance when
+        <span class="highlight">updating data</span>
+        across a large network of permissioned, decentralized and heterogeneous RDF data stores?
     </p>
 </section>
 
-<section id="intermediate-interfaces" class="slide" inlist="" rel="schema:hasPart" resource="#intermediate-interfaces">
-    <h2 property="schema:name"
-        style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-        font-size: 4rem; white-space: nowrap"
-    >Interfaces</h2>
-</section>
+<!--<section id="intermediate-interfaces" class="slide" inlist="" rel="schema:hasPart" resource="#intermediate-interfaces">-->
+<!--    <h2 property="schema:name"-->
+<!--        style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);-->
+<!--        font-size: 4rem; white-space: nowrap"-->
+<!--    >Interfaces</h2>-->
+<!--</section>-->
 
 <section id="polyglot-system" class="slide" rel="schema:hasPart" resource="#polyglot-system">
     <h2>Datasets exposed as polyglot system</h2>
@@ -161,19 +189,6 @@
 
     <p class="note" style="line-height: 1.2; font-size: 1.3rem; position: absolute; bottom: 0">
         <span>[4]: Khine, P.P., Wang, Z.: "A review of polyglot persistence in the big data world"</span>
-    </p>
-</section>
-
-
-<section id="heterogeneity" class="slide" rel="schema:hasPart" resource="#heterogeneity">
-    <h2>Interfaces heterogeneity tackled for reads</h2>
-    <div style="display: flex; align-items: center; flex-direction: column; gap: 2rem">
-        <img src="img/read-abstraction.drawio.png"
-             style="width: 38%"/>
-    </div>
-
-    <p class="note" style="line-height: 1.2; font-size: 1.3rem; position: absolute; bottom: 0">
-        <span>[5]: Taelman Ruben et al. "Comunica: A Modular SPARQL Query Engine for the Web"</span>
     </p>
 </section>
 
@@ -199,12 +214,12 @@
     </div>
 </section>
 
-<section id="intermediate-update-single" class="slide" inlist="" rel="schema:hasPart" resource="#intermediate-update-single">
-    <h2 property="schema:name"
-        style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-        font-size: 4rem; white-space: nowrap"
-    >Update single datastore</h2>
-</section>
+<!--<section id="intermediate-update-single" class="slide" inlist="" rel="schema:hasPart" resource="#intermediate-update-single">-->
+<!--    <h2 property="schema:name"-->
+<!--        style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);-->
+<!--        font-size: 4rem; white-space: nowrap"-->
+<!--    >Update single datastore</h2>-->
+<!--</section>-->
 
 
 <section id="scheduling" class="slide" inlist="" rel="schema:hasPart" resource="#scheduling">
@@ -214,13 +229,13 @@
 
     <div style="position: absolute; bottom: 0; display: flex; flex-direction: column; gap: 8rem">
         <div class="next" style="width: 55%; background: var(--rq-color); padding: 0.5rem 1rem; line-height: 1.3; position: relative;">
-            RQ 4: How to schedule the execution of an update query over a single data store using the selected interface?
+            RQ 4: How to schedule the execution of an update query over a single data store?
             <div class="next"
-                 style="position: absolute; right: -25px; bottom: -10px; background: var(--color-prim); color: white; padding: 10px;
-                        display: flex; justify-content: center; border-radius: 10px; transform: translate(0, 50%)">
+                 style="position: absolute; right: -25px; bottom: -43px; background: var(--color-prim); color: white; padding: 10px;
+                        display: flex; justify-content: center; border-radius: 10px;">
                 <img src="img/check.svg" height="30px">
-                SolidBench <br>
-                + interface select
+                SolidBench
+<!--                <br> + interface select-->
             </div>
         </div>
         <p class="note" style="line-height: 1.2; font-size: 1.3rem;">
@@ -229,12 +244,12 @@
     </div>
 </section>
 
-<section id="intermediate-update-multiple" class="slide" inlist="" rel="schema:hasPart" resource="#intermediate-update-multiple">
-    <h2 property="schema:name"
-        style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-        font-size: 4rem; white-space: nowrap"
-    >Update multiple datastore</h2>
-</section>
+<!--<section id="intermediate-update-multiple" class="slide" inlist="" rel="schema:hasPart" resource="#intermediate-update-multiple">-->
+<!--    <h2 property="schema:name"-->
+<!--        style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);-->
+<!--        font-size: 4rem; white-space: nowrap"-->
+<!--    >Update multiple datastore</h2>-->
+<!--</section>-->
 
 <section id="schedule-multiple" class="slide" inlist="" rel="schema:hasPart" resource="#schedule-multiple">
     <h2 property="schema:name">Schedule update over multiple datasets</h2>

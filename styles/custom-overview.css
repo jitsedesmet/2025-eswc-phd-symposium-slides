@@ -8,6 +8,10 @@
     --color-href: var(--color-sec);
 }
 
+.highlight {
+    color: var(--color-sec);
+}
+
 .caption {
     border-top: 10px solid var(--color-prim);
     background: var(--color-prim);
