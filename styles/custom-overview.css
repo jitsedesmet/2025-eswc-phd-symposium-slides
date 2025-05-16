@@ -12,6 +12,22 @@
     color: var(--color-sec);
 }
 
+.shower {
+    counter-reset: ref-count;
+}
+
+.ref::before {
+    content: '[' counter(ref-count, decimal) ']: ';
+}
+
+.ref.refcc::before {
+    content: '[' counter(ref-count, decimal) ', ©]: ';
+}
+
+.refnew {
+    counter-increment: ref-count 1;
+}
+
 .caption {
     border-top: 10px solid var(--color-prim);
     background: var(--color-prim);
