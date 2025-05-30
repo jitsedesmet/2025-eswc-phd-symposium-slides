@@ -13,7 +13,13 @@
 }
 
 .shower {
-    counter-reset: ref-count;
+    counter-reset: ref-count slide-num;
+}
+
+.num::before {
+    content: counter(slide-num);
+    counter-increment: slide-num 1;
+    margin-right: 1em;
 }
 
 .ref::before {
